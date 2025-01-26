@@ -1,0 +1,11 @@
+version: '3.8'  # используйте актуальную версию Compose
+
+services:
+  shop_bot:
+    build:
+      context: .  # папка, в которой находится Dockerfile
+    image: shop_bot:test_brif  # указываем имя и тег образа
+    container_name: shop_bot_test_brif
+    restart: unless-stopped
+    volumes:
+      - ./data:/shop_bot/data
